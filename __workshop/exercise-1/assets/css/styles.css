@@ -1,0 +1,175 @@
+@import "_reset.css";
+
+:root {
+  --ksu-purple: #5b2a86;
+  --lemon-yellow: #faf33e;
+  --beau-blue: #bfddf7;
+  --raspberry: #dd1155;
+  --melon: #ffa69e;
+  --main-font: "Alfa Slab One", cursive;
+  --alt-font: "Open Sans Condensed", sans-serif;
+  --small-band-height: 120px;
+  --large-band-height: 240px;
+  --number-container-size: 100px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 320px;
+}
+
+.bacon {
+  background: var(--beau-blue);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--small-band-height);
+  z-index: 1;
+}
+
+.bivrip {
+  margin: 4px;
+}
+
+.bivrip .boom {
+  background: transparent;
+  border: 3px solid var(--ksu-purple);
+  padding: 14px 32px;
+  color: var(--ksu-purple);
+  position: relative;
+  vertical-align: middle;
+  font-family: var(--main-font);
+  font-size: 32px;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+.believe {
+  color: #fff;
+  top: -50px;
+  font-family: var(--main-font);
+  font-size: 256px;
+  opacity: 0.2;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.boom.active,
+.boom:hover {
+  background: var(--ksu-purple);
+  border-color: transparent;
+  color: white;
+}
+
+.what-now {
+  min-height: var(--large-band-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 32px;
+}
+
+.that {
+  color: var(--ksu-purple);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--alt-font);
+  font-size: 100px;
+  height: var(--number-container-size);
+  margin: 10px;
+  position: relative;
+  width: var(--number-container-size);
+}
+
+.that::before,
+.that::after {
+  content: "";
+  background: var(--lemon-yellow);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  height: calc(var(--number-container-size) - 20px);
+  width: calc(var(--number-container-size) - 20px);
+  z-index: -1;
+  bottom: -5px;
+  left: -5px;
+}
+
+.that::after {
+  height: calc(var(--number-container-size) - 30px);
+  width: calc(var(--number-container-size) - 30px);
+  bottom: 14px;
+  left: 16px;
+}
+
+.other-stuff {
+  flex: 1;
+  background: var(--raspberry);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--main-font);
+  font-size: 72px;
+}
+
+.other-stuff .aaaa {
+  color: #fff;
+  position: relative;
+  font-size: 196px;
+  margin: 0 24px 0 100px;
+  z-index: 1;
+}
+
+.other-stuff .aaaa::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-right: 200px solid var(--melon);
+  border-bottom: 200px solid transparent;
+  z-index: -1;
+  left: -50px;
+  transform: rotate(20deg);
+}
+
+.other-stuff .bbbb {
+  color: #fff;
+  background: var(--ksu-purple);
+  width: 400px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  margin-top: 24px;
+  padding: 50px;
+  transition: all ease 400ms;
+  z-index: 1;
+}
+
+.eeee {
+  color: var(--melon);
+}
+
+.dddd {
+  background: var(--ksu-purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: var(--small-band-height);
+}
+
+.cccc {
+  color: #fff;
+  font-size: 60px;
+  font-family: var(--main-font);
+}

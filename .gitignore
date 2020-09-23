@@ -11,3 +11,7 @@
 Thumbs.db
 # Folder config file
 Desktop.ini
+
+.vscode
+
+/node_modules
