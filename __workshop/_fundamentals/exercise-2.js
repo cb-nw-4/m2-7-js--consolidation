@@ -54,37 +54,6 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   // Write code
-  let dessertCounts = {};
-
-  Object.values(obj).forEach((dessert) => {
-    // Is this dessert brand-new, or has it come up already?
-    let isBrandNewItem = typeof dessertCounts[dessert] === "undefined";
-
-    if (isBrandNewItem) {
-      // If it's brand new, add it to the object, and assign it a count of `1`
-      dessertCounts[dessert] = 1;
-    } else {
-      // Otherwise, increment it
-      dessertCounts[dessert]++;
-    }
-  });
-
-  // dessertCount should now be an object like:
-  // { 'pie': 3, 'gummy bears': 2, 'child tears': 1 }
-  //
-  // We can iterate through the keys, and use the `.sort` method to put
-  // them in order
-
-  return Object.keys(dessertCounts).sort((dessertA, dessertB) => {
-    let dessertCountA = dessertCounts[dessertA];
-    let dessertCountB = dessertCounts[dessertB];
-
-    if (dessertCountA < dessertCountB) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
 }
 
 // Verification via console.log()
