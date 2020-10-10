@@ -67,21 +67,23 @@ function sortByPopularity(obj) {
   
   const arrayOfObjects = Object.entries(counted)
   let newArr = arrayOfObjects.sort((a,b) => {
-   return b[1] - a[1]
+   return a[1] - b[1]
   })
 
   const finished = newArr.map(el => {
     return el[0]
+
   })
-  
-  return finished
+
+  // console.log(finished)
+  return finished.reverse()
   
   // const sortedDessertArr = 
   
   
 }
 
-// sortByPopularity(favoriteDessertsGroupA)
+sortByPopularity(favoriteDessertsGroupA)
 
 // Verification via console.log()
 // console.log(
