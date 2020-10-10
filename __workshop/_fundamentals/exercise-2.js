@@ -76,7 +76,6 @@ function sortByPopularity(obj) {
     else if (countA === countB) {
       return 0;
     }
-    // return countB - countA;
   })
   return result;
 }
