@@ -59,14 +59,19 @@ const favoriteDessertsGroupB = {
 //   'easter eggs': [ 'lyndon' ],
 //   'dessert': [ 'minda' ]
 // }
-
-function groupByValue(obj) {
-  // do something
+function groupByValue(peopleAndTheirFavouriteDessertObj) {
+  const dessertsAndPeopleWhoLikeThemObj = {};
+  const peopleAndTheirFavouriteDessertEntries = Object.entries(peopleAndTheirFavouriteDessertObj);
+  peopleAndTheirFavouriteDessertEntries.forEach(([person, dessert])=>{
+    dessertsAndPeopleWhoLikeThemObj[dessert] = dessertsAndPeopleWhoLikeThemObj[dessert] || [];
+    dessertsAndPeopleWhoLikeThemObj[dessert].push(person)
+  })
+  return dessertsAndPeopleWhoLikeThemObj;
 }
 
 // Verification via console.log()
 console.log("Group A", groupByValue(favoriteDessertsGroupA));
-console.log("Group B", groupByValue(favoriteDessertsGroupB));
+// console.log("Group B", groupByValue(favoriteDessertsGroupB));
 
 // Test your code: "yarn test exercise-3"
 
