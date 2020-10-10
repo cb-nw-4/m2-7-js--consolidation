@@ -84,7 +84,24 @@ function transformData(data) {
   let {
     name,
     age, 
-    status, superpower1, superpower2, address1, addressCity, addressState, addressCountry, motherName, motherAge, motherStatus, motherSuperpower1, motherSuperpower2, girlfriendName, girlfriendAge, girlfriendStatus, girlfriendSuperpower1, girlfriendSuperpower2} = data;
+    status, 
+    superpower1, 
+    superpower2, 
+    address1, 
+    addressCity, 
+    addressState, 
+    addressCountry, 
+    motherName, 
+    motherAge, 
+    motherStatus, 
+    motherSuperpower1, 
+    motherSuperpower2, 
+    girlfriendName, 
+    girlfriendAge, 
+    girlfriendStatus, 
+    girlfriendSuperpower1, 
+    girlfriendSuperpower2} = data;
+
   let address = {
     "streetAddress": address1,
     "city": addressCity,
