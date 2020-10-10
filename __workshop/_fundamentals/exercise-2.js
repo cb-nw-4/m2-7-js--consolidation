@@ -55,12 +55,12 @@ const favoriteDessertsGroupB = {
 function sortByPopularity(obj) {
   let valueArr = Object.values(obj)
   let newObj = {};
-  valueArr.forEach(desart => {
-    if (newObj.hasOwnProperty(desart) === true) {
-      newObj[desart]++;
+  valueArr.forEach(dessert => {
+    if (newObj.hasOwnProperty(dessert) === true) {
+      newObj[dessert]++;
     }
     else {
-      newObj[desart] = 1;
+      newObj[dessert] = 1;
     }
   })
 
