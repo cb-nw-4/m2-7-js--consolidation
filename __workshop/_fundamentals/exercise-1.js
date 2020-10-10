@@ -81,7 +81,57 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+
+  let mainPowers = [];
+  let momPowers = [];
+  let gfPowers = [];
+
+  function checkPowers(){
+    if(data.superpower1 !==null){ mainPowers.push(data.superpower1);}
+    if(data.superpower2 !==null){ mainPowers.push(data.superpower2);}
+    
+    if(data.motherSuperpower1 !==null){ momPowers.push(data.motherSuperpower1);}
+    if(data.motherSuperpower2 !==null){ momPowers.push(data.motherSuperpower2);}
+
+    if(data.girlfriendSuperpower1 !==null){ gfPowers.push(data.girlfriendSuperpower1);}
+    if(data.girlfriendSuperpower2 !==null){ gfPowers.push(data.girlfriendSuperpower2);}
+    
+  };
+
+  checkPowers();
+
+  let person = {
+    name: data.name,
+    age: data.age,
+    status: data.status,
+    address: 
+    {
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry
+    },
+    superpowers: mainPowers,
+    relationships: [
+      {
+        type: "mother",
+        name: data.motherName,
+        age: data.motherAge,
+        status: data.motherStatus,
+        superpowers: momPowers
+      },
+      {
+        type:"girlfriend",
+        name: data.girlfriendName,
+        age: data.girlfriendAge,
+        status: data.girlfriendStatus,
+        superpowers: gfPowers
+       }
+    ]
+  };
+
+
+  return person;
 }
 
 // Use a console.log to verify
