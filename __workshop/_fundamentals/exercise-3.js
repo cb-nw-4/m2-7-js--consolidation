@@ -61,7 +61,15 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+  let entries = Object.entries(obj);
+  let a = {};
+  entries.forEach((pairing,i) =>{
+    if (a[pairing[1]]) {
+       a[pairing[1]].push(pairing[0]);
+    }
+     else a[pairing[1]] =[pairing[0]]
+  })
+  return a;
 }
 
 // Verification via console.log()

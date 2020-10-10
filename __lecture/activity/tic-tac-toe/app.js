@@ -7,6 +7,8 @@ const player2 = document.querySelector('.js-player-2');
 const endMessageDiv = document.querySelector('.js-end-message');
 const restartBtn = document.querySelector('.restart');
 
+
+
 // this array tracks the state of the game board.
 const game = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -39,17 +41,30 @@ const verifyWin = () => {
 };
 
 const togglePlayer = () => {
-  // use .active to show active player visually...
+  if (currentPlayer === '1') {
+    currentPlayer = '2';
+    player1.classList.remove('active');
+    player2.classList.add('active');
+  }
+  else if (currentPlayer === '2'){
+    currentPlayer = '1';
+    player2.classList.remove('active');
+    player1.classList.add('active');
+  }
 };
 
 const handleClick = (event) => {
+  
   const cell = event.target.id;
   const currentCellDiv = document.getElementById(cell);
   const cellId = cell.charAt(cell.length - 1);
   const icon = currentPlayer === '1' ? PLAYER_1_ICON : PLAYER_2_ICON;
+  
 
   if (typeof game[cellId] === 'number') {
     currentCellDiv.innerText = icon;
+    togglePlayer();
+    
 
     // so much missing here...
   }

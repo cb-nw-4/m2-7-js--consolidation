@@ -81,7 +81,38 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+  newData = {
+    name: data.name,
+    age: data.age,
+    status: data.status,
+    address: {
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry
+    },
+      superpowers: Superpowers(data.superpower1, data.superpower2),
+    
+    relationships: [ relationinfo(`mother`), relationinfo(`bestFriend`), relationinfo(`girlfriend`)]
+  }
+  function relationinfo(id){
+    let newObj ={
+       type: id,
+       name: data[`${id}Name`],
+       age: data[`${id}Age`],
+       status: data[`${id}Status`],
+       superpowers: Superpowers(data[`${id}Superpower1`], data[`${id}Superpower2`])};
+    newObj.type = newObj.type.toLowerCase();
+    return newObj;
+  }
+  function Superpowers(super1, super2){
+    let newArr =[];
+    if (super1 !== null) newArr.push(super1);
+    if (super2 !== null) newArr.push(super2);
+    return newArr;
+  }
+
+  return newData;
 }
 
 // Use a console.log to verify
