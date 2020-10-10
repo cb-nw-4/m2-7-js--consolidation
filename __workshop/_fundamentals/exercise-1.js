@@ -82,12 +82,33 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
+  
+  let newObj = {
+    name: data.name,
+    age: data.age,
+    status: data.status,
+    address:{
+      streetAddress: data.address1,
+      city: data.addressCity,
+      state: data.addressState,
+      country: data.addressCountry
+    },
+    superpowers: [data.superpower1]
+  }
+
+  let mother = {type: 'mother', name: data.motherName, age: data.motherAge, status: data.motherStatus, superpowers: []}
+  let girlfriend = {type: 'girlfriend', name: data.girlfriendName, age: data.girlfriendAge, status: data.girlfriendStatus, superpowers: [data.girlfriendSuperpower1, data.girlfriendSuperpower2]}
+  
+  newObj.relationships = [mother, girlfriend]
+  
+  return newObj
 }
 
+transformData(inputData)
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy
 // to see what it looks like, and debug any problems.
-console.log(JSON.stringify(transformData(inputData), null, 2));
+// console.log(JSON.stringify(transformData(inputData), null, 2));
 
 // Test your code: "yarn test exercise-1"
 
