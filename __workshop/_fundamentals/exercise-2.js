@@ -54,17 +54,44 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   // Write code
+  
+  let faveDesserts = (Object.values(obj))
+  let counted = faveDesserts.reduce((dessertObj, currentDessert) => {
+    
+    let numOfDesserts = dessertObj[currentDessert] ? dessertObj[currentDessert] + 1 : 1
+    dessertObj[currentDessert] = numOfDesserts
+    // console.log(dessertObj)
+    return dessertObj
+  }, {})
+  
+  
+  const arrayOfObjects = Object.entries(counted)
+  let newArr = arrayOfObjects.sort((a,b) => {
+   return b[1] - a[1]
+  })
+
+  const finished = newArr.map(el => {
+    return el[0]
+  })
+  
+  return finished
+  
+  // const sortedDessertArr = 
+  
+  
 }
 
+// sortByPopularity(favoriteDessertsGroupA)
+
 // Verification via console.log()
-console.log(
-  "Popular desserts in Group A:",
-  sortByPopularity(favoriteDessertsGroupA)
-);
-console.log(
-  "Popular desserts in Group B:",
-  sortByPopularity(favoriteDessertsGroupB)
-);
+// console.log(
+//   "Popular desserts in Group A:",
+//   sortByPopularity(favoriteDessertsGroupA)
+// );
+// console.log(
+//   "Popular desserts in Group B:",
+//   sortByPopularity(favoriteDessertsGroupB)
+// );
 
 // Test your code: "yarn test exercise-2"
 
