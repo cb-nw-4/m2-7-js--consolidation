@@ -61,7 +61,13 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+
+ let newObj= {};
+  for (key in obj ){ 
+    newObj[obj[key]] = newObj[obj[key]] === undefined ? [key] : [... newObj[obj[key]], key];    
+  } 
+
+  return newObj;
 }
 
 // Verification via console.log()
