@@ -63,7 +63,6 @@ const favoriteDessertsGroupB = {
 function groupByValue(obj) {
   let resultObj = {};
   let peopleDessertArr = Object.entries(obj);
-  console.log(peopleDessertArr);
   peopleDessertArr.forEach(([person, dessert]) => {
     resultObj[dessert] = resultObj[dessert] || [];
     resultObj[dessert].push(person);
