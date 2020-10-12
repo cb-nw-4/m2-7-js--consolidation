@@ -82,6 +82,52 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
+  let newObj = {};
+  newObj.name = data.name;
+  newObj.age = data.age;
+  newObj.status = data.status; 
+  newObj.address = {streetAddress: data.address1, city: data.addressCity, state: data.addressState, country: data.addressCountry};
+
+  //create superpower array
+  let superPowerArr = [];
+  if (data.superpower1 !== null)
+    superPowerArr.push(data.superpower1);
+  if (data.superpower2 !== null)
+    superPowerArr.push(data.superpower2);
+  newObj.superpowers = superPowerArr;
+
+  //create relationShip array
+  let relationshipsArr = [];
+  if (data.motherName !== undefined) {
+      let superPowerArr = [];
+    if (data.motherSuperpower1 !== null)
+      superPowerArr.push(data.motherSuperpower1);
+    if (data.motherSuperpower2 !== null)
+      superPowerArr.push(data.motherSuperpower2);    
+    relationshipsArr.push({ type: "mother", name: data.motherName, age: data.motherAge, status: data.motherStatus, superpowers:  superPowerArr});
+  }
+
+  if (data.bestFriendName !== undefined) {
+    let superPowerArr = [];
+    if (data.bestFriendSuperpower1 !== null)
+      superPowerArr.push(data.bestFriendSuperpower1);
+    if (data.bestFriendSuperpower2 !== null)
+      superPowerArr.push(data.bestFriendSuperpower2);   
+    relationshipsArr.push({ type: "best-friend", name: data.bestFriendName, age: data.bestFriendAge, status: data.bestFriendStatus, superpowers: superPowerArr});
+  }
+
+  if (data.girlfriendName !== undefined) {
+    let superPowerArr = [];
+    if (data.girlfriendSuperpower1 !== null)
+      superPowerArr.push(data.girlfriendSuperpower1);
+    if (data.girlfriendSuperpower2 !== null)
+      superPowerArr.push(data.girlfriendSuperpower2);  
+    relationshipsArr.push({ type: "girlfriend", name: data.girlfriendName, age: data.girlfriendAge, status: data.girlfriendStatus, superpowers: superPowerArr});
+  }
+  newObj.relationships = relationshipsArr;
+
+  return newObj;
+
 }
 
 // Use a console.log to verify

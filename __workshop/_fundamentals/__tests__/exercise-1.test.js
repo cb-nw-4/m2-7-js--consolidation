@@ -21,6 +21,13 @@ test("Exercise 1", () => {
         superpowers: [],
       },
       {
+        type: "best-friend",
+        name: "Mike Wheeler",
+        age: 9,
+        status: "frenetic",
+        superpowers: [],
+      },
+      {
         type: "girlfriend",
         name: "Eleven",
         age: 9,
