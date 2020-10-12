@@ -81,7 +81,57 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+	let person = {
+			name: '', age: '', status: '', address: {},
+			superpowers: [],
+			relationships: [
+				{ type: '', name: '', age: '', status: '', superpowers: []},
+				{ type: '', name: '', age: '', status: '', superpowers: []}
+			]};
+
+	person.name = data.name;
+	person.age = data.age;
+	person.status = data.status;
+	person.address.streetAddress = data.address1;
+	person.address.city = data.addressCity;
+	person.address.state = data.addressState;
+	person.address.country = data.addressCountry;
+
+	if (data.superpower1 !== null) {
+		person.superpowers.push(data.superpower1);
+	}
+
+	if (data.superpower2 !== null) {
+		person.superpowers.push(data.superpower2);
+	}
+
+	person.relationships[0].type = 'mother';
+	person.relationships[0].name = data.motherName;
+	person.relationships[0].age = data.motherAge;
+	person.relationships[0].status = data.motherStatus;
+
+	if (data.motherSuperpower1 !== null) {
+		person.relationships[0].superpowers.push(data.motherSuperpower1);
+	}
+
+	if (data.motherSuperpower2 !== null) {
+		person.relationships[0].superpowers.push(data.motherSuperpower2);
+	}
+
+	person.relationships[1].type = 'girlfriend';
+	person.relationships[1].name = data.girlfriendName;
+	person.relationships[1].age = data.girlfriendAge;
+	person.relationships[1].status = data.girlfriendStatus;
+
+	if (data.girlfriendSuperpower1 !== null) {
+		person.relationships[1].superpowers.push(data.girlfriendSuperpower1);
+	}
+
+	if (data.girlfriendSuperpower2 !== null) {
+		person.relationships[1].superpowers.push(data.girlfriendSuperpower2);
+	}
+
+	return person;
 }
 
 // Use a console.log to verify
