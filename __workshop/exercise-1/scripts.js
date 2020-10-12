@@ -1,10 +1,8 @@
-// 😋
-//hide dessert name and number
 let currentYear = "2018";
 
-const dessertName = document.getElementById("name");
-const dessertNumber = document.getElementById("number");
-const dessertDefault = document.getElementById("default");
+const dessertName = document.getElementById("dessert-name");
+const dessertNumber = document.getElementById("dessert-number");
+const dessertDefault = document.getElementById("dessert-default");
 const btn2018 = document.getElementById("btn-2018");
 const btn2019 = document.getElementById("btn-2019");
 
@@ -23,27 +21,30 @@ btn2018.addEventListener("click", handleClick);
 btn2019.addEventListener("click", handleClick);
 
 const handleMouseover = (event)=>{
-    const circle = event.currentTarget.id;     
-    const circleId = circle.slice(7);  
-    dessertDefault.style.display = "none";
+    const target = event.target.id;  
+    if (target === "yellow-section") 
+        return; 
+
+    dessertDefault.style.display = "none";    
     dessertName.style.display = "block";
-    dessertNumber.style.display = "block";
+    dessertNumber.style.display = "block"; 
+ 
+    const circleId = target.slice(7);  
     dessertNumber.innerText = topTenList[currentYear][circleId-1].id;
     dessertName.innerText = topTenList[currentYear][circleId-1].name;
 }
-const handleMouseout = ()=>{    
+const handleMouseout = (event)=>{   
+    const target = event.target.id;  
+    if (target !== "yellow-section") 
+        return;
+      
     dessertDefault.style.display = "block";
     dessertName.style.display = "none";   
     dessertNumber.style.display = "none";  
 }
 
-const yellowButtons = document.querySelectorAll("#yellow-section div");
-yellowButtons.forEach((circle)=> {
-    circle.addEventListener("mouseover", handleMouseover);
-});
-
-yellowButtons.forEach((circle)=> {
-    circle.addEventListener("mouseout", handleMouseout);
-});
+const yellowSection = document.querySelector("#yellow-section");
+yellowSection.addEventListener("mouseover", handleMouseover);
+yellowSection.addEventListener("mouseout", handleMouseout);
 
 
