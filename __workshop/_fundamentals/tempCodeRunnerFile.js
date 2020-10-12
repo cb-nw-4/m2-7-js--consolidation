@@ -1,0 +1,1 @@
+let newArr = Object.values(favoriteDessertsGroupA);

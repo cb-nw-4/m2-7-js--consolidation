@@ -88,7 +88,6 @@ function transformData(data) {
   } = inputData
 
   motherSuperpower1 = [];
-
   let innerAddress = new Object();
     innerAddress["streetAddress"] = address1;
     innerAddress["city"] = addressCity;

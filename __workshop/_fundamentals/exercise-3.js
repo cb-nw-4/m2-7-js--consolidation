@@ -61,7 +61,8 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+  let newArr = Object.keys(obj).map((key) => [String(key), obj[key]]);
+  return newArr;
 }
 
 // Verification via console.log()

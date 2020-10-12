@@ -39,6 +39,7 @@ const favoriteDessertsGroupB = {
   minda: "dessert",
 };
 
+
 // Write a function which takes one of these objects and puts them into an
 // array which is sorted from most popular to least popular. For example,
 // in Group B, the most popular dessert is "pie", so it should be first
@@ -53,7 +54,28 @@ const favoriteDessertsGroupB = {
 // Your function should work with both objects and any other objects of the same shape.
 
 function sortByPopularity(obj) {
-  // Write code
+  // let {scott, fred, lisa, riley, sunny, john, beth, summer, morty, rick, andrew, jerry, "jean-luc":jeanLuc, tiffany, melissa} = favoriteDessertsGroupA;
+  let newArr = Object.values(obj);
+  let count = {};
+  newArr.forEach((element) => {
+    count[element] = (count[element] || 0) + 1;
+  }) // Count duplicates (not in order) i.e: { pie: 3, 'deep-fried mars bar': 1, etc. }
+
+  let sortable = [];
+  for (let item in count) {
+    sortable.push([item, count[item]]);
+  } //Creates an array with nested arrays i.e: [ ['pie', 3], ['deep-fried mars bar', 1], etc. ]
+  sortable.sort((a,b) => {
+    return a[1] - b[1];
+  }) //Sort them by lowest to highest i.e: [ ['deep-fried mars bar', 1], ['pie', 3], etc. ]
+
+  let newSortable = sortable.map((element) => {
+    return element[0];
+  }) //Return only the name i.e: [ 'deep-fried mars bar', pie, etc.]
+
+  // return sortable.reverse();
+  return newSortable.reverse(); //Reverse to get highest to lowest i.e: [ pie, 'deep-fried-mars bar', etc.]
+
 }
 
 // Verification via console.log()
