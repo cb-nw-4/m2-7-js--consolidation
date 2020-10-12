@@ -53,7 +53,32 @@ const favoriteDessertsGroupB = {
 // Your function should work with both objects and any other objects of the same shape.
 
 function sortByPopularity(obj) {
-  // Write code
+  
+  // Get only the desserts names
+  let options = Object.values(obj);
+  let dessertCount ={};
+
+  // Populate the dessertCount object with the dessert names
+  // as keys, and '0' as values
+  options.forEach(element=>{
+    if(!(element in dessertCount)){
+      dessertCount[element]=0;
+    }
+  });
+
+  // Increment the count values in the object
+  options.forEach(dessert=>{
+      dessertCount[dessert] +=1;
+  });
+
+  // Sort the keys by comparing the pair values. Will sort increasingly.
+  // Use reverse to get right order.
+  // Returns only the keys since we used sort on Object.keys
+  let sortedCount = Object.keys(dessertCount).sort(function(a,b){
+    return dessertCount[a] - dessertCount[b];
+  }).reverse();
+ 
+  return sortedCount;
 }
 
 // Verification via console.log()
