@@ -127,6 +127,7 @@ function transformData(data) {
   }
   newObj.relationships.push(relationGirlfriend);
   console.log(newObj);
+  return newObj;
 }
 
 // Use a console.log to verify
