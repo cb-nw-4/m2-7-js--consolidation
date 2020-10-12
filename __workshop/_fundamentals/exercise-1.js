@@ -81,7 +81,97 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+  let {
+    name,
+    age, 
+    status, 
+    superpower1, 
+    superpower2, 
+    address1, 
+    addressCity, 
+    addressState, 
+    addressCountry, 
+    motherName, 
+    motherAge, 
+    motherStatus, 
+    motherSuperpower1, 
+    motherSuperpower2, 
+    girlfriendName, 
+    girlfriendAge, 
+    girlfriendStatus, 
+    girlfriendSuperpower1, 
+    girlfriendSuperpower2} = data;
+
+  let address = {
+    "streetAddress": address1,
+    "city": addressCity,
+    "state": addressState,
+    "country": addressCountry
+  };
+
+
+  let superpowers = [];
+  if (typeof superpower1 === 'string' && typeof superpower2 === 'string') {
+    superpowers.push(superpower1).push(superpower2);
+  }
+  else if (typeof superpower1 === 'string' && typeof superpower2 !== 'string') {
+    superpowers.push(superpower1);
+  }
+  else if (typeof superpower1 !== 'string' && typeof superpower2 === 'string') {
+    superpowers.push(superpower2);
+  }
+
+  let motherSuperpowers = [];
+  if (typeof motherSuperpower1 === 'string' && typeof motherSuperpower2 === 'string') {
+    motherSuperpowers.push(motherSuperpower1)
+    motherSuperpowers.push(motherSuperpower2);
+  }
+  else if (typeof motherSuperpower1 === 'string' && typeof motherSuperpower2 !== 'string') {
+    motherSuperpowers.push(motherSuperpower1);
+  }
+  else if (typeof motherSuperpower1 !== 'string' && typeof motherSuperpower2 === 'string') {
+    motherSuperpowers.push(motherSuperpower2);
+  }
+
+  let mother = {
+    "type": 'mother',
+    "name": motherName,
+    "age": motherAge,
+    "status": motherStatus,
+    "superpowers": motherSuperpowers
+  };
+
+  let girlfriendSuperpowers = [];
+  if (typeof girlfriendSuperpower1 === 'string' && typeof girlfriendSuperpower2 === 'string') {
+    girlfriendSuperpowers.push(girlfriendSuperpower1)
+    girlfriendSuperpowers.push(girlfriendSuperpower2);
+  }
+  else if (typeof girlfriendSuperpower1 === 'string' && typeof girlfriendSuperpower2 !== 'string') {
+    girlfriendSuperpowers.push(girlfriendSuperpower1);
+  }
+  else if (typeof girlfriendSuperpower1 !== 'string' && typeof girlfriendSuperpower2 === 'string') {
+    girlfriendSuperpowers.push(girlfriendSuperpower2);
+  }
+
+  let girlfriend = {
+    "type": 'girlfriend',
+    "name": girlfriendName,
+    "age": girlfriendAge,
+    "status": girlfriendStatus,
+    "superpowers": girlfriendSuperpowers
+  };
+
+  let relationships = [mother, girlfriend];
+  
+  let newObj = {
+    "name": name,
+    "age": age,
+    "status": status,
+    "address": address,
+    "superpowers": superpowers,
+    "relationships": relationships,
+  }
+  return newObj;
 }
 
 // Use a console.log to verify
