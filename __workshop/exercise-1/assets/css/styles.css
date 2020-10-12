@@ -30,11 +30,11 @@ body {
   z-index: 1;
 }
 
-.bivrip { /*button*/ 
+.bivrip { /*2018-2019 button div*/ 
   margin: 4px;
 }
 
-.bivrip .boom { /*boom= anchor link 2018-2019*/
+.bivrip .boom { /*boom= anchor link for 2018-2019*/
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -47,7 +47,7 @@ body {
   transition: all 0.5s;
 }
 
-.believe { /*2018-2019 big head*/
+.believe { /*2018-2019 big header*/
   color: #fff;
   top: -50px;
   font-family: var(--main-font);
@@ -60,13 +60,13 @@ body {
 }
 
 .boom.active,
-.boom:hover {  /*boom= anchor link 2018-2019*/ 
+.boom:hover {  /*boom= anchor link for 2018-2019*/ 
   background: var(--ksu-purple);
   border-color: transparent;
   color: white;
 }
 
-.listdiv { /*pink part*/
+.listdiv { /*white part*/
   min-height: var(--large-band-height);
   display: flex;
   justify-content: center;
@@ -75,7 +75,7 @@ body {
   padding: 32px;
 }
 
-.that { /* number container, list*/ 
+.that { /* number container with yellow list*/ 
   color: var(--ksu-purple);
   cursor: pointer;
   display: flex;
@@ -90,7 +90,7 @@ body {
 }
 
 .that::before,
-.that::after { /* number container, list*/
+.that::after { /* number container with yellow list, items are anchors*/
   content: "";
   background: var(--lemon-yellow);
   border-radius: 50%;
@@ -103,14 +103,14 @@ body {
   left: -5px;
 }
 
-.that::after { /* number container, anchor list*/
+.that::after { /* number container, items are anchors*/
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
 
-.maindiv { /* half page, half page*/ 
+.maindiv { /* half page dark pink area*/ 
   flex: 1;
   background: var(--raspberry);
   overflow: hidden;
@@ -142,7 +142,7 @@ body {
   transform: rotate(20deg);
 }
 
-.other-stuff .bbbb { /* numbers part purple box*/ 
+.other-stuff .bbbb { /*dark pink part purple box*/ 
   color: #fff;
   background: var(--ksu-purple);
   width: 400px;

@@ -98,7 +98,7 @@ maindiv.setAttribute("class","maindiv");
 body.appendChild(maindiv);
 maindiv.style.flex="4";
 pinkAreaPlaceolderText.setAttribute("class","eeee"); 
-pinkAreaPlaceolderText.innerText="Hover over a# !";
+pinkAreaPlaceolderText.innerText="Hover over a #!";
 maindiv.appendChild(pinkAreaPlaceolderText); // goes out with click
 foodContainer.setAttribute("class","other-stuff");
 foodContainer.style.display="flex";
