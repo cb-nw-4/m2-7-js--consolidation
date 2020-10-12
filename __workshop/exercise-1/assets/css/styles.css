@@ -19,7 +19,7 @@ body {
   height: 100vh;
   min-width: 320px;
 }
-
+/*  container DIV years selection */
 .bacon {
   background: var(--beau-blue);
   position: relative;
@@ -29,11 +29,11 @@ body {
   height: var(--small-band-height);
   z-index: 1;
 }
-
+/* container box year selector */
 .bivrip {
   margin: 4px;
 }
-
+/* year 2018-2019 */
 .bivrip .boom {
   background: transparent;
   border: 3px solid var(--ksu-purple);
@@ -46,7 +46,7 @@ body {
   text-decoration: none;
   transition: all 0.5s;
 }
-
+/* cover year */
 .believe {
   color: #fff;
   top: -50px;
@@ -58,14 +58,14 @@ body {
   width: 100%;
   overflow: hidden;
 }
-
+/* year 2018-2019 */
 .boom.active,
 .boom:hover {
   background: var(--ksu-purple);
   border-color: transparent;
   color: white;
 }
-
+/* white section with number*/
 .what-now {
   min-height: var(--large-band-height);
   display: flex;
@@ -74,7 +74,7 @@ body {
   flex-wrap: wrap;
   padding: 32px;
 }
-
+/* yellow circle */
 .that {
   color: var(--ksu-purple);
   cursor: pointer;
@@ -88,7 +88,7 @@ body {
   position: relative;
   width: var(--number-container-size);
 }
-
+/* yellow circle */
 .that::before,
 .that::after {
   content: "";
@@ -102,14 +102,14 @@ body {
   bottom: -5px;
   left: -5px;
 }
-
+/* yellow circle */
 .that::after {
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
-
+/* section where food apear */
 .other-stuff {
   flex: 1;
   background: var(--raspberry);
@@ -120,7 +120,7 @@ body {
   font-family: var(--main-font);
   font-size: 72px;
 }
-
+/* triangle */
 .other-stuff .aaaa {
   color: #fff;
   position: relative;
@@ -128,7 +128,7 @@ body {
   margin: 0 24px 0 100px;
   z-index: 1;
 }
-
+/* triangle */
 .other-stuff .aaaa::before {
   content: "";
   position: absolute;
@@ -141,7 +141,7 @@ body {
   left: -50px;
   transform: rotate(20deg);
 }
-
+/* container for food name */
 .other-stuff .bbbb {
   color: #fff;
   background: var(--ksu-purple);
@@ -154,11 +154,11 @@ body {
   transition: all ease 400ms;
   z-index: 1;
 }
-
+/* hover a# text */
 .eeee {
   color: var(--melon);
 }
-
+/* year title */
 .dddd {
   background: var(--ksu-purple);
   display: flex;
@@ -167,7 +167,7 @@ body {
   align-items: center;
   height: var(--small-band-height);
 }
-
+/* text in white on purplebox food name*/
 .cccc {
   color: #fff;
   font-size: 60px;
