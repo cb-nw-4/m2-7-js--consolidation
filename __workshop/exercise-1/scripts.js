@@ -24,6 +24,7 @@ for(let i=1;i<=10;i++){
     number.setAttribute('id', i);
     number.setAttribute('class', 'numbers');
     number.addEventListener('mouseover',displayRank);
+    number.addEventListener('mouseout',displayNone);
     band.appendChild(number);
 }
 
@@ -76,18 +77,17 @@ function displayRank(event){
                 triangle.innerText=year[hoverID-1].id;
                 foodster.innerText=year[hoverID-1].name;
                 break;
+                
             default:
-                defaultText.style.display="block";
-                triangle.style.display="none";
-                foodster.style.display="none";  
                 year=[];
         }
     }
-    else{
-        defaultText.style.display="block";
-        triangle.style.display="none";
-        foodster.style.display="none";  
-    }
+}
+
+function displayNone(){
+    defaultText.style.display="block";
+    triangle.style.display="none";
+    foodster.style.display="none";  
 }
 
 
