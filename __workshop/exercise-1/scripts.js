@@ -15,10 +15,8 @@ button1.addEventListener('click',obj);
 button2.addEventListener('click',obj);
 
 
-let v2019=topTenList[2019];
-let v2018=topTenList[2018];
 let year='';
-let check=''
+let check='';
 
 for(let i=1;i<=10;i++){
     let number=document.createElement('p');
@@ -56,11 +54,8 @@ function obj(event){
     } 
 }
 
-
-
 function displayRank(event){
     let hoverID= event.target.id;
-    
     if(hoverID){
         obj;
         switch(check){
@@ -82,6 +77,9 @@ function displayRank(event){
                 foodster.innerText=year[hoverID-1].name;
                 break;
             default:
+                defaultText.style.display="block";
+                triangle.style.display="none";
+                foodster.style.display="none";  
                 year=[];
         }
     }
