@@ -82,6 +82,60 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
+  let finalObject={};
+  let {address1,addressCity,addressCountry,addressState} = data;
+  let address = {}; 
+  address.streetAddress=address1;
+  address.city=addressCity; 
+  address.country=addressCountry;
+  address.state=addressState;
+  let {name,age,status} = data; 
+  finalObject.name=name; 
+  finalObject.age=age; 
+  finalObject.status=status; 
+  finalObject.address=address;
+  let {superpower1,superpower2}= data;
+  let superpowersArr=[];
+  if(superpower1!==null) { 
+    superpowersArr.push(superpower1);
+  };
+  if(superpower2!==null) { 
+    superpowersArr.push(superpower2);
+  };
+  finalObject.superpowers=superpowersArr;
+  relationshipsArr= []; 
+  let {motherName,motherAge,motherStatus,motherSuperpower1,motherSuperpower2}= data;
+  let mother={}; 
+  mother.type="mother";
+  mother.name=motherName;
+  mother.age=motherAge;
+  mother.status=motherStatus;
+  let superpowersArrMother=[];
+  if(motherSuperpower1!==null) { 
+    superpowersArrMother.push(motherSuperpower1);
+  };
+  if(motherSuperpower2!==null) { 
+    superpowersArrMother.push(motherSuperpower2);
+  };
+  mother.superpowers=superpowersArrMother;
+  relationshipsArr.push(mother);
+  let {girlfriendAge,girlfriendName,girlfriendStatus,girlfriendSuperpower1,girlfriendSuperpower2} = data;
+  let girlfriend = {}; 
+  girlfriend.type="girlfriend"; 
+  girlfriend.name=girlfriendName; 
+  girlfriend.age=girlfriendAge;
+  girlfriend.status=girlfriendStatus;
+  let superpowersArrGirlfrnd=[];
+  if(girlfriendSuperpower1!==null) { 
+    superpowersArrGirlfrnd.push(girlfriendSuperpower1);
+  };
+  if(girlfriendSuperpower2!==null) { 
+    superpowersArrGirlfrnd.push(girlfriendSuperpower2);
+  };
+  girlfriend.superpowers=superpowersArrGirlfrnd;
+  relationshipsArr.push(girlfriend);
+  finalObject.relationships = relationshipsArr;
+  return finalObject;
 }
 
 // Use a console.log to verify
