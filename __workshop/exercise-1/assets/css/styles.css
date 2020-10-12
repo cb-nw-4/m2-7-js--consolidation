@@ -20,7 +20,7 @@ body {
   min-width: 320px;
 }
 
-.bacon {
+.subheader {
   background: var(--beau-blue);
   position: relative;
   display: flex;
@@ -30,11 +30,11 @@ body {
   z-index: 1;
 }
 
-.bivrip {
+.bivrip { /*button*/ 
   margin: 4px;
 }
 
-.bivrip .boom {
+.bivrip .boom { /*boom= anchor link 2018-2019*/
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -47,7 +47,7 @@ body {
   transition: all 0.5s;
 }
 
-.believe {
+.believe { /*2018-2019 big head*/
   color: #fff;
   top: -50px;
   font-family: var(--main-font);
@@ -60,13 +60,13 @@ body {
 }
 
 .boom.active,
-.boom:hover {
+.boom:hover {  /*boom= anchor link 2018-2019*/ 
   background: var(--ksu-purple);
   border-color: transparent;
   color: white;
 }
 
-.what-now {
+.listdiv { /*pink part*/
   min-height: var(--large-band-height);
   display: flex;
   justify-content: center;
@@ -75,7 +75,7 @@ body {
   padding: 32px;
 }
 
-.that {
+.that { /* number container, list*/ 
   color: var(--ksu-purple);
   cursor: pointer;
   display: flex;
@@ -90,7 +90,7 @@ body {
 }
 
 .that::before,
-.that::after {
+.that::after { /* number container, list*/
   content: "";
   background: var(--lemon-yellow);
   border-radius: 50%;
@@ -103,14 +103,14 @@ body {
   left: -5px;
 }
 
-.that::after {
+.that::after { /* number container, anchor list*/
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
 
-.other-stuff {
+.maindiv { /* half page, half page*/ 
   flex: 1;
   background: var(--raspberry);
   overflow: hidden;
@@ -121,7 +121,7 @@ body {
   font-size: 72px;
 }
 
-.other-stuff .aaaa {
+.other-stuff .aaaa { /* other stuff is the container div,  a is numbers on pink page*/ 
   color: #fff;
   position: relative;
   font-size: 196px;
@@ -129,7 +129,7 @@ body {
   z-index: 1;
 }
 
-.other-stuff .aaaa::before {
+.other-stuff .aaaa::before { /*shape on pink page*/ 
   content: "";
   position: absolute;
   width: 0;
@@ -142,7 +142,7 @@ body {
   transform: rotate(20deg);
 }
 
-.other-stuff .bbbb {
+.other-stuff .bbbb { /* numbers part purple box*/ 
   color: #fff;
   background: var(--ksu-purple);
   width: 400px;
@@ -155,11 +155,11 @@ body {
   z-index: 1;
 }
 
-.eeee {
+.eeee { /*p that says hover over a*/ 
   color: var(--melon);
 }
 
-.dddd {
+.header {
   background: var(--ksu-purple);
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@ body {
   height: var(--small-band-height);
 }
 
-.cccc {
+.cccc { /*p that describes the food*/ 
   color: #fff;
   font-size: 60px;
   font-family: var(--main-font);

@@ -61,7 +61,18 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+  let finalObject={};
+  let desserts = Object.values(obj);
+  let uniqueDesserts= new Set(desserts); 
+  let uniqueDessertsArr = [...uniqueDesserts];
+  uniqueDessertsArr.forEach ((element)=> { 
+    finalObject[element]= [];
+  });
+  let people = Object.keys(obj);
+  people.forEach((element,i)=> {
+    finalObject[desserts[i]].push(people[i]);
+  });
+  return finalObject;
 }
 
 // Verification via console.log()
