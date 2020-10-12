@@ -23,12 +23,12 @@ test("Exercise 2", () => {
     "cheese cake",
     "ice-cream",
     "brownies",
-    "profiteroles",
-    "waffles",
-    "rhubard pie",
-    "apple pie",
-    "chocolate cake",
     "tiramisu",
+    "chocolate cake",
+    "apple pie",
+    "rhubard pie",
+    "waffles",
+    "profiteroles",
   ]);
   expect(
     sortByPopularity({
@@ -49,14 +49,14 @@ test("Exercise 2", () => {
   ).toStrictEqual([
     "pie",
     "gummy bears",
-    "dessert",
-    "easter eggs",
-    "revenge (served cold)",
-    "rum cake",
-    "not applicable",
-    "panda express",
-    "child tears",
     "deep-fried mars bar",
+    "child tears",
+    "panda express",
+    "not applicable",
+    "rum cake",
+    "revenge (served cold)",
+    "easter eggs",
+    "dessert",
   ]);
   expect(
     sortByPopularity({
@@ -77,5 +77,5 @@ test("Exercise 2", () => {
       e: "saturday",
       f: "monday",
     })
-  ).toStrictEqual(["monday", "saturday", "wednesday", "tuesday"]);
+  ).toStrictEqual(["monday", "tuesday", "wednesday", "saturday",]);
 });
