@@ -8,6 +8,44 @@ let topContainer = document.getElementById('top');
 let topBar = document.createElement('div');
 topContainer.appendChild(topBar);
 
+//Add fonctionality to footer
+let footerContainer = document.querySelector('footer');
+footerContainer.style.height = '100px';
+footerContainer.style.display = 'flex';
+footerContainer.style.justifyContent = 'space-around';
+footerContainer.style.background = 'var(--ksu-purple)';
+
+
+let ul = document.querySelector('ul');
+
+
+let footBar = document.createElement('div');
+footerContainer.insertBefore(footBar, ul);
+
+
+let footBar1 = document.createElement('div');
+footBar.appendChild(footBar1);
+let footBar2 = document.createElement('div');
+footBar.appendChild(footBar2);
+let footBar3 = document.createElement('div');
+footBar.appendChild(footBar3);
+footBar.classList.add('believe');
+footBar.style.top = 'auto';
+footBar.style.height = '100px';
+footBar.style.fontSize = '200px';
+footBar.style.display = 'flex';
+footBar.style.justifyContent = 'space-between'
+
+
+let links = document.querySelectorAll('a');
+links.forEach(link => {
+    link.style.textDecoration = 'none';
+    link.style.color = 'var(--beau-blue)';
+})
+
+//
+
+
 let button2018 = document.getElementById('2018');
 let button2019 = document.getElementById('2019');
 
@@ -31,6 +69,15 @@ const handleClic = (event) => {
     divOther.classList.add('eeee');
     selectTopTen(id);
     toggleButton(id);
+
+    //add Fonctionality to footer
+
+    footBar1.innerHTML = id;
+
+    footBar2.innerHTML = id;
+
+    footBar3.innerHTML = id;
+
 
 }
 
@@ -75,12 +122,11 @@ const toggleButton = () => {
 
     } else if (currentId == '2019') {
         currentId = '2018';
-
         button2018.classList.remove('active');
         button2019.classList.add('active');
     }
 }
 
 
-button2018.addEventListener('click', handleClic)
-button2019.addEventListener('click', handleClic)
+button2018.addEventListener('click', handleClic);
+button2019.addEventListener('click', handleClic);
