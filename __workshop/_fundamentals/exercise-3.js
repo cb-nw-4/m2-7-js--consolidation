@@ -61,7 +61,19 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+
+	let dessertCounts = {};
+
+	Object.keys(obj).forEach(key => {
+    
+		if (dessertCounts.hasOwnProperty(obj[key]) === false) {
+			dessertCounts[obj[key]] = Array(key);
+		} else {
+			dessertCounts[obj[key]].push(key);
+		}
+	});
+
+	return dessertCounts;
 }
 
 // Verification via console.log()

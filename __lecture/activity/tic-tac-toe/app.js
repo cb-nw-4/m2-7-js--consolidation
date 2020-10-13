@@ -8,7 +8,7 @@ const endMessageDiv = document.querySelector('.js-end-message');
 const restartBtn = document.querySelector('.restart');
 
 // this array tracks the state of the game board.
-const game = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const game = [0, 1, 2, 3, 4, 5, 5, 5, 8];
 
 // Game Settings
 const PLAYER_1_ICON = 'X';
@@ -22,24 +22,85 @@ player1.classList.add('active');
 const handleRestart = () => {
   // reload the page
   // feels like cheating but it WILL reset the game
+  restartBtn.removeEventListener('click', handleRestart);
+  location.reload();
 };
 
 const toggleRestartBtn = () => {
   // enable the restart btn
+  restartBtn.disabled = false;
+  restartBtn.addEventListener('click', handleRestart);
 };
 
-const win = () => {
+const win = (theWinner) => {
   // stop board from being clickable
   // print the winner to the screen
   // activate the restart btn
+  board.removeEventListener('click', handleClick);
+  endMessageDiv.innerText = `The winner is: Player ${theWinner}`;
+  toggleRestartBtn();
 };
 
 const verifyWin = () => {
-  // Use the game array to determine the winner.
+  let theWinner = '';
+  gameWon = false;
+
+  // winner by row
+  if (game[0] === game[1] && game[0] === game[2]) {
+    gameWon = true;
+    theWinner = game[0];
+  }
+
+  if (game[3] === game[4] && game[3] === game[5]) {
+    gameWon = true;
+    theWinner = game[3];
+  }
+
+  if (game[6] === game[7] && game[6] === game[8]) {
+    gameWon = true;
+    theWinner = game[6];
+  }
+
+  // winner by column
+  if (game[0] === game[3] && game[0] === game[6]) {
+    gameWon = true;
+    theWinner = game[0];
+  }
+
+  if (game[1] === game[4] && game[1] === game[7]) {
+    gameWon = true;
+    theWinner = game[1];
+  }
+
+  if (game[2] === game[5] && game[2] === game[8]) {
+    gameWon = true;
+    theWinner = game[2];
+  }
+
+  // winner by diagonal
+  if (game[0] === game[4] && game[0] === game[8]) {
+    gameWon = true;
+    theWinner = game[0];
+  }
+
+  if (game[2] === game[4] && game[2] === game[6]) {
+    gameWon = true;
+    theWinner = game[0];
+  }
+
+  return [gameWon, theWinner];
 };
 
 const togglePlayer = () => {
-  // use .active to show active player visually...
+  if (currentPlayer === '1') {
+    currentPlayer = '2';
+    player1.classList.remove('active');
+    player2.classList.add('active');
+  } else {
+    currentPlayer = '1';
+    player2.classList.remove('active');
+    player1.classList.add('active');
+  }
 };
 
 const handleClick = (event) => {
@@ -50,8 +111,14 @@ const handleClick = (event) => {
 
   if (typeof game[cellId] === 'number') {
     currentCellDiv.innerText = icon;
+    game[cellId] = currentPlayer;
+    gameResult = verifyWin();
 
-    // so much missing here...
+    if (gameResult[0]) {
+      win(gameResult[1]);
+    } else {
+      togglePlayer();
+    }
   }
 };
 
