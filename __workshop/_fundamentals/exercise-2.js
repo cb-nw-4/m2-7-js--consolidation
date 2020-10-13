@@ -54,25 +54,16 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   let newArr = Object.values(obj);
-  // let a = {};
-
-  const dessertsArr = [...newArr]
-  const countedDesserts = dessertsArr.reduce((dessertsObj, currentDessert)=>{ // dessertsObj = {}, currentDessert = "brownies"
-    if(dessertsObj[currentDessert]){
-      dessertsObj[currentDessert] += 1
-    } else{
-      dessertsObj[currentDessert] = 1
-    }
-    return dessertsObj;
-  }, {})
+  let a = {};
 
 
 
-  // newArr.forEach((element) => {
-  //   if (a[element]) a[element]=a[element]+1;
-  //   else a[element]=1; 
-  // });
-  // console.log(a);
+
+  newArr.forEach((element) => {
+  if (a[element]) a[element]=a[element]+1;
+  else a[element]=1; 
+  });
+ console.log(a);
   const sortedDesserts = Object.entries(a).sort((a,b) =>{
     return b[1]-a[1]; 
   });
