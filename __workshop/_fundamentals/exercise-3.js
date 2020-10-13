@@ -62,6 +62,13 @@ const favoriteDessertsGroupB = {
 
 function groupByValue(obj) {
   // do something
+  let result={};
+  let foodie=Object.entries(obj);
+  foodie.forEach(([person,dessert])=>{
+    result[dessert]=result[dessert]||[];
+    result[dessert].push(person);
+  });
+  return result;
 }
 
 // Verification via console.log()
@@ -71,3 +78,15 @@ console.log("Group B", groupByValue(favoriteDessertsGroupB));
 // Test your code: "yarn test exercise-3"
 
 module.exports = groupByValue;
+
+// let newobj=Object.values(obj);
+// let dess=newobj.filter((item, i, ar) => ar.indexOf(item) === i);
+// console.log(dess);
+// let result={};
+// for(let i=0;i<dess.length;i++){
+//   for(const prop in obj){
+//     if(dess[i]===`${obj[prop]}`){
+//       result[dess[i]]=[[result[dess[i]]]+[`${prop}`]];
+//     }
+//   }
+// }

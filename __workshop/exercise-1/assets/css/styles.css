@@ -34,7 +34,7 @@ body {
   margin: 4px;
 }
 
-.bivrip .boom {
+.boom {
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -74,8 +74,8 @@ body {
   flex-wrap: wrap;
   padding: 32px;
 }
-
-.that {
+/*.that */
+.numbers {
   color: var(--ksu-purple);
   cursor: pointer;
   display: flex;
@@ -89,8 +89,8 @@ body {
   width: var(--number-container-size);
 }
 
-.that::before,
-.that::after {
+.numbers::before,
+.numbers::after {
   content: "";
   background: var(--lemon-yellow);
   border-radius: 50%;
@@ -103,14 +103,14 @@ body {
   left: -5px;
 }
 
-.that::after {
+.numbers::after {
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
-
-.other-stuff {
+/* other-stuff */
+.hover-result {
   flex: 1;
   background: var(--raspberry);
   overflow: hidden;
@@ -120,8 +120,8 @@ body {
   font-family: var(--main-font);
   font-size: 72px;
 }
-
-.other-stuff .aaaa {
+/* aaaa */
+.hover-result .pinkie {
   color: #fff;
   position: relative;
   font-size: 196px;
@@ -129,7 +129,7 @@ body {
   z-index: 1;
 }
 
-.other-stuff .aaaa::before {
+.hover-result .pinkie::before {
   content: "";
   position: absolute;
   width: 0;
@@ -141,8 +141,8 @@ body {
   left: -50px;
   transform: rotate(20deg);
 }
-
-.other-stuff .bbbb {
+/* .bbbb */
+.hover-result .foodie {
   color: #fff;
   background: var(--ksu-purple);
   width: 400px;
@@ -154,12 +154,12 @@ body {
   transition: all ease 400ms;
   z-index: 1;
 }
-
-.eeee {
+/* eeee */
+.defaultText {
   color: var(--melon);
 }
-
-.dddd {
+/* .dddd */
+.header {
   background: var(--ksu-purple);
   display: flex;
   flex-direction: column;
@@ -167,8 +167,8 @@ body {
   align-items: center;
   height: var(--small-band-height);
 }
-
-.cccc {
+/* .cccc */
+#text {
   color: #fff;
   font-size: 60px;
   font-family: var(--main-font);

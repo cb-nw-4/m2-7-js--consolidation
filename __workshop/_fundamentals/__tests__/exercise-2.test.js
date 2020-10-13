@@ -20,15 +20,15 @@ test("Exercise 2", () => {
       melissa: "profiteroles",
     })
   ).toStrictEqual([
-    "cheese cake",
-    "ice-cream",
-    "brownies",
-    "profiteroles",
-    "waffles",
-    "rhubard pie",
-    "apple pie",
-    "chocolate cake",
-    "tiramisu",
+    'cheese cake',
+    'ice-cream',
+    'brownies',
+    'tiramisu',
+    'chocolate cake',
+    'apple pie',
+    'rhubard pie',
+    'waffles',
+    'profiteroles'
   ]);
   expect(
     sortByPopularity({
@@ -47,16 +47,16 @@ test("Exercise 2", () => {
       minda: "dessert",
     })
   ).toStrictEqual([
-    "pie",
-    "gummy bears",
-    "dessert",
-    "easter eggs",
-    "revenge (served cold)",
-    "rum cake",
-    "not applicable",
-    "panda express",
-    "child tears",
-    "deep-fried mars bar",
+    'pie',
+    'gummy bears',
+    'deep-fried mars bar',
+    'child tears',
+    'panda express',
+    'not applicable',
+    'rum cake',
+    'revenge (served cold)',
+    'easter eggs',
+    'dessert'
   ]);
   expect(
     sortByPopularity({
@@ -77,5 +77,5 @@ test("Exercise 2", () => {
       e: "saturday",
       f: "monday",
     })
-  ).toStrictEqual(["monday", "saturday", "wednesday", "tuesday"]);
+  ).toStrictEqual(["monday","tuesday", "wednesday", "saturday"]);
 });
