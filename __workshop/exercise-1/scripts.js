@@ -7,6 +7,7 @@ const idNum = document.querySelector('.id-num');
 const foodItem = document.querySelector('.food-item');
 
 function handleBtn1Click() {
+    // handle clicking 2018
     selectedYear = '2018';
     button1.classList.add('active');
     button2.classList.remove('active');
@@ -14,6 +15,7 @@ function handleBtn1Click() {
 }
 
 function handleBtn2Click() {
+    // handle clicking 2019
     selectedYear = '2019';
     button2.classList.add('active');
     button1.classList.remove('active');
@@ -21,12 +23,14 @@ function handleBtn2Click() {
 }
 
 function mouseLeave(event) {
+    // replace instruction text you the mouse leaves the area
     instructionText.style.display = 'block';
     idNum.style.display = 'none';
     foodItem.style.display = 'none';
 }
 
 function top10Hover(event) {
+    // update the detail area based on what you're hovering over
 
     if (event.target.className.startsWith('that')) {
         instructionText.style.display = 'none';
