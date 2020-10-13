@@ -19,7 +19,7 @@ const topTenList = {
     { id: "5", name: "miso pork ramen" },
     { id: "6", name: "chicken burger" },
     { id: "7", name: "bone broth" },
-    { id: "8", name: "brown sugar (bubble) tea" },
+    { id: "8", name: "brown sugar (bubbl) tea" },
     { id: "9", name: "vegan pad thai" },
     { id: "10", name: "impossible burger" },
   ],
