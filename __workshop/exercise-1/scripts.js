@@ -23,7 +23,7 @@ function handleBtn2Click() {
 }
 
 function mouseLeave(event) {
-    // replace instruction text you the mouse leaves the area
+    // replace instruction text when the mouse leaves the area
     instructionText.style.display = 'block';
     idNum.style.display = 'none';
     foodItem.style.display = 'none';
