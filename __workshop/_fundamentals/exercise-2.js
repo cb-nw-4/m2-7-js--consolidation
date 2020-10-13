@@ -6,37 +6,37 @@
 // Notice that there are duplicates (eg. both Riley and John like "ice-cream").
 
 const favoriteDessertsGroupA = {
-  scott: "brownies",
-  fred: "tiramisu",
-  lisa: "chocolate cake",
-  riley: "ice-cream",
-  sunny: "cheese cake",
-  john: "ice-cream",
-  beth: "cheese cake",
-  summer: "ice-cream",
-  morty: "apple pie",
-  rick: "brownies",
-  andrew: "cheese cake",
-  jerry: "rhubard pie",
-  "jean-luc": "cheese cake",
-  tiffany: "waffles",
-  melissa: "profiteroles",
+    scott: "brownies",
+    fred: "tiramisu",
+    lisa: "chocolate cake",
+    riley: "ice-cream",
+    sunny: "cheese cake",
+    john: "ice-cream",
+    beth: "cheese cake",
+    summer: "ice-cream",
+    morty: "apple pie",
+    rick: "brownies",
+    andrew: "cheese cake",
+    jerry: "rhubard pie",
+    "jean-luc": "cheese cake",
+    tiffany: "waffles",
+    melissa: "profiteroles",
 };
 
 const favoriteDessertsGroupB = {
-  alice: "pie",
-  betty: "deep-fried mars bar",
-  colin: "gummy bears",
-  damien: "child tears",
-  ellicia: "panda express",
-  fertrude: "gummy bears",
-  glinda: "pie",
-  hethel: "not applicable",
-  irsula: "rum cake",
-  judas: "revenge (served cold)",
-  khloe: "pie",
-  lyndon: "easter eggs",
-  minda: "dessert",
+    alice: "pie",
+    betty: "deep-fried mars bar",
+    colin: "gummy bears",
+    damien: "child tears",
+    ellicia: "panda express",
+    fertrude: "gummy bears",
+    glinda: "pie",
+    hethel: "not applicable",
+    irsula: "rum cake",
+    judas: "revenge (served cold)",
+    khloe: "pie",
+    lyndon: "easter eggs",
+    minda: "dessert",
 };
 
 // Write a function which takes one of these objects and puts them into an
@@ -53,17 +53,35 @@ const favoriteDessertsGroupB = {
 // Your function should work with both objects and any other objects of the same shape.
 
 function sortByPopularity(obj) {
-  // Write code
+    // Write code
+
+    let desserts = Object.values(obj);
+    let dessertsCount = {};
+
+    desserts.forEach((el, i) => {
+        if (dessertsCount[el] === undefined) {
+            dessertsCount[el] = 1;
+        } else {
+            dessertsCount[el] = dessertsCount[el] + 1
+        }
+
+    });
+
+
+    return Object.entries(dessertsCount).reverse().sort((a, b) => {
+        return b[1] - a[1]
+    }).map(el => el[0])
+
 }
 
 // Verification via console.log()
 console.log(
-  "Popular desserts in Group A:",
-  sortByPopularity(favoriteDessertsGroupA)
+    "Popular desserts in Group A:",
+    sortByPopularity(favoriteDessertsGroupA)
 );
 console.log(
-  "Popular desserts in Group B:",
-  sortByPopularity(favoriteDessertsGroupB)
+    "Popular desserts in Group B:",
+    sortByPopularity(favoriteDessertsGroupB)
 );
 
 // Test your code: "yarn test exercise-2"

@@ -6,37 +6,37 @@
 // Notice that there are duplicates (eg. both Riley and John like "ice-cream").
 
 const favoriteDessertsGroupA = {
-  scott: "brownies",
-  fred: "tiramisu",
-  lisa: "chocolate cake",
-  riley: "ice-cream",
-  sunny: "cheese cake",
-  john: "ice-cream",
-  beth: "cheese cake",
-  summer: "ice-cream",
-  morty: "apple pie",
-  rick: "brownies",
-  andrew: "cheese cake",
-  jerry: "rhubard pie",
-  "jean-luc": "cheese cake",
-  tiffany: "waffles",
-  melissa: "profiteroles",
+    scott: "brownies",
+    fred: "tiramisu",
+    lisa: "chocolate cake",
+    riley: "ice-cream",
+    sunny: "cheese cake",
+    john: "ice-cream",
+    beth: "cheese cake",
+    summer: "ice-cream",
+    morty: "apple pie",
+    rick: "brownies",
+    andrew: "cheese cake",
+    jerry: "rhubard pie",
+    "jean-luc": "cheese cake",
+    tiffany: "waffles",
+    melissa: "profiteroles",
 };
 
 const favoriteDessertsGroupB = {
-  alice: "pie",
-  betty: "deep-fried mars bar",
-  colin: "gummy bears",
-  damien: "child tears",
-  ellicia: "panda express",
-  fertrude: "gummy bears",
-  glinda: "pie",
-  hethel: "not applicable",
-  irsula: "rum cake",
-  judas: "revenge (served cold)",
-  khloe: "pie",
-  lyndon: "easter eggs",
-  minda: "dessert",
+    alice: "pie",
+    betty: "deep-fried mars bar",
+    colin: "gummy bears",
+    damien: "child tears",
+    ellicia: "panda express",
+    fertrude: "gummy bears",
+    glinda: "pie",
+    hethel: "not applicable",
+    irsula: "rum cake",
+    judas: "revenge (served cold)",
+    khloe: "pie",
+    lyndon: "easter eggs",
+    minda: "dessert",
 };
 
 // Write a function that accepts an object (like above) and returns a new object with the data sorted
@@ -61,7 +61,27 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+    // do something
+
+    let countDesserts = {};
+
+    let desserts = Object.values(obj);
+
+
+    desserts.forEach((dessertName) => {
+        countDesserts[dessertName] = [];
+
+        Object.keys(obj).forEach(key => {
+            if (obj[key] === dessertName) {
+                countDesserts[dessertName].push(key)
+            }
+        })
+    })
+    return countDesserts;
+
+
+
+
 }
 
 // Verification via console.log()

@@ -3,30 +3,30 @@
 // Write a function will transform the inputData object into a new shape (As provided below.)
 
 const inputData = {
-  name: "Will Byers",
-  age: 9,
-  status: "upside down",
-  superpower1: "can-blink-lights",
-  superpower2: null,
-  address1: "123 Whatever street",
-  addressCity: "Hawkins",
-  addressState: "Indiana",
-  addressCountry: "United States",
-  motherName: "Joyce Byers",
-  motherAge: 35,
-  motherStatus: "worried",
-  motherSuperpower1: null,
-  motherSuperpower2: null,
-  bestFriendName: "Mike Wheeler",
-  bestFriendAge: 9,
-  bestFriendStatus: "frenetic",
-  bestFriendSuperpower1: null,
-  bestFriendSuperpower2: null,
-  girlfriendName: "Eleven",
-  girlfriendAge: 9,
-  girlfriendStatus: "angry",
-  girlfriendSuperpower1: "telepathy",
-  girlfriendSuperpower2: "multiverse portal sealing",
+    name: "Will Byers",
+    age: 9,
+    status: "upside down",
+    superpower1: "can-blink-lights",
+    superpower2: null,
+    address1: "123 Whatever street",
+    addressCity: "Hawkins",
+    addressState: "Indiana",
+    addressCountry: "United States",
+    motherName: "Joyce Byers",
+    motherAge: 35,
+    motherStatus: "worried",
+    motherSuperpower1: null,
+    motherSuperpower2: null,
+    bestFriendName: "Mike Wheeler",
+    bestFriendAge: 9,
+    bestFriendStatus: "frenetic",
+    bestFriendSuperpower1: null,
+    bestFriendSuperpower2: null,
+    girlfriendName: "Eleven",
+    girlfriendAge: 9,
+    girlfriendStatus: "angry",
+    girlfriendSuperpower1: "telepathy",
+    girlfriendSuperpower2: "multiverse portal sealing",
 };
 
 // We want a function that can transform it from that shape to this shape:
@@ -81,7 +81,92 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+    // Your code here
+
+    let {
+        name,
+        age,
+        status,
+        superpower1,
+        superpower2,
+        address1,
+        addressCity,
+        addressState,
+        addressCountry,
+        motherName,
+        motherAge,
+        motherStatus,
+        motherSuperpower1,
+        motherSuperpower2,
+        bestFriendName,
+        bestFriendAge,
+        bestFriendStatus,
+        bestFriendSuperpower1,
+        bestFriendSuperpower2,
+        girlfriendName,
+        girlfriendAge,
+        girlfriendStatus,
+        girlfriendSuperpower1,
+        girlfriendSuperpower2
+    } = inputData
+
+
+    let address = {},
+        superpowers = [],
+        relationships = [];
+
+
+    if (superpower1 != null) {
+        superpowers.push(superpower1)
+    }
+    if (superpower2 != null) {
+        superpowers.push(superpower2)
+    }
+
+
+    address['streetAddress'] = address1;
+    address['city'] = addressCity;
+    address['state'] = addressState;
+    address['country'] = addressCountry;
+
+
+    let relationship1 = {},
+        relationship2 = {};
+
+    relationship1['type'] = 'mother';
+    relationship1['name'] = motherName;
+    relationship1['age'] = motherAge;
+    relationship1['status'] = motherStatus;
+    relationship1['superpowers'] = [];
+
+    if (motherSuperpower1 != null) {
+        relationship1['superpowers'].push(motherSuperpower1)
+    }
+    if (motherSuperpower1 != null) {
+        relationship1['superpowers'].push(motherSuperpower2)
+    }
+
+    relationship2['type'] = 'girlfriend';
+    relationship2['name'] = girlfriendName;
+    relationship2['age'] = girlfriendAge;
+    relationship2['status'] = girlfriendStatus;
+    relationship2['superpowers'] = [];
+
+
+    if (girlfriendSuperpower1 != null) {
+        relationship2['superpowers'].push(girlfriendSuperpower1)
+    }
+    if (girlfriendSuperpower1 != null) {
+        relationship2['superpowers'].push(girlfriendSuperpower2)
+    }
+
+
+    relationships = [relationship1, relationship2]
+
+
+
+    return { name, age, status, address, superpowers, relationships }
+
 }
 
 // Use a console.log to verify
