@@ -61,8 +61,24 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  // do something
+  // first create an array of the desserts, then create an object that takes the dessert as the key
+  let newDessertObject = {};
+  let dessertArray = Object.entries(obj);
+  dessertArray.forEach(([person, dessert]) =>{
+    newDessertObject[dessert] = dessertArray[dessert] || [];
+    newDessertObject[dessert].push(person);
+  });
+return newDessertObject;
 }
+  // let finalDessertObject = objectArray.forEach((element, key) => {
+  //   if(objectArray[1] === newDessertObject[key]){
+  //     newDessertObject[element] = objectArray[0];
+  //   }
+  //   return finalDessertObject;
+  // });
+  // push the original object through and create a conditional that matches the value to the new object's key and adds that key to an array
+  // goal: new object with the key as the desserts and the values are an array of peopl
+
 
 // Verification via console.log()
 console.log("Group A", groupByValue(favoriteDessertsGroupA));
