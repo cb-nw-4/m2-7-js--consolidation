@@ -61,13 +61,33 @@ const favoriteDessertsGroupB = {
 // }
 
 function groupByValue(obj) {
-  let newArr = Object.keys(obj).map((key) => [String(key), obj[key]]);
-  return newArr;
+  // let newArr = Object.keys(obj).map((key) => [String(key), obj[key]]);
+  // return newArr;
+
+  let newArr = Object.entries(obj);
+
+  let newObj = new Object();
+    //newObj['pie'] = newArr[0];
+    //newObj['gummy bears'] = newArr[2];
+  // console.log(newObj);
+
+  // console.log(newArr);
+
+  newArr.forEach((element) => {
+    if (newObj[element[1]] === undefined) {
+      newObj[element[1]] = [element[0]];
+    } else {
+      newObj[element[1]].push(element[0]);
+    }
+
+  })
+  
+  return newObj;
 }
 
 // Verification via console.log()
 console.log("Group A", groupByValue(favoriteDessertsGroupA));
-console.log("Group B", groupByValue(favoriteDessertsGroupB));
+//console.log("Group B", groupByValue(favoriteDessertsGroupB));
 
 // Test your code: "yarn test exercise-3"
 
