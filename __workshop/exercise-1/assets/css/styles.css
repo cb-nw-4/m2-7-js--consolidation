@@ -34,7 +34,7 @@ body {
   margin: 4px;
 }
 
-.bivrip .boom {
+.bivrip, .boom {
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -59,6 +59,8 @@ body {
   overflow: hidden;
 }
 
+.bivrip.active,
+.bivrip:hover,
 .boom.active,
 .boom:hover {
   background: var(--ksu-purple);

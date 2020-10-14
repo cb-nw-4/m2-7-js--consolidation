@@ -82,6 +82,49 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
+
+  let willSuperpowers = [];
+if (data.superpower1 !== null) {
+  willSuperpowers.push(data.superpower1);
+}
+if (data.superpower2 !== null) {
+  willSuperpowers.push(data.superpower2);
+}
+
+let motherSuperpowers = [];
+if (data.motherSuperpower1 !== null) {
+  motherSuperpowers.push(data.motherSuperpower1);
+}
+if (data.motherSuperpower2 !== null) {
+  motherSuperpowers.push(data.motherSuperpower2);
+}
+
+let girlfriendSuperpowers = [];
+if (data.girlfriendSuperpower1 !== null) {
+  girlfriendSuperpowers.push(data.girlfriendSuperpower1);
+}
+if (data.girlfriendSuperpower2 !== null) {
+  girlfriendSuperpowers.push(data.girlfriendSuperpower2);
+}
+
+let willRelationships = [];
+
+let mother = {type: "mother", name: data.motherName, age: data.motherAge, status: data.motherStatus, superpowers: motherSuperpowers};
+
+let girlfriend = {type: "girlfriend", name: data.girlfriendName, age: data.girlfriendAge, status: data.girlfriendStatus, superpowers: girlfriendSuperpowers};
+
+willRelationships.push(mother)
+willRelationships.push(girlfriend)
+
+let object = {};
+object.name = data.name;
+object.age = data.age;
+object.status = data.status;
+object.address = {streetAddress: data.address1, city: data.addressCity, state: data.addressState, country: data.addressCountry};
+object.superpowers = willSuperpowers;
+object.relationships = willRelationships;
+
+return object;
 }
 
 // Use a console.log to verify
