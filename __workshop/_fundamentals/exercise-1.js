@@ -81,7 +81,53 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+  let newObj = {};
+  newObj.name = data.name;
+  newObj.age = data.age;
+  newObj.status = data.status;
+  newObj.address = {};
+  newObj.address.streetAddress = data.address1;
+  newObj.address.city = data.addressCity;
+  newObj.address.state = data.addressState;
+  newObj.address.country = data.addressCountry;
+  newObj.superpowers = [];
+  if (typeof data.superpower1 === "string") {
+    newObj.superpowers.push(data.superpower1);
+  }
+  if (typeof data.superpower2 === "string") {
+    newObj.superpowers.push(data.superpower2);
+  }
+
+  newObj.relationships = [];
+  let relationMother = {};
+  relationMother.type = "mother";
+  relationMother.name = data.motherName;
+  relationMother.age = data.motherAge;
+  relationMother.status = data.motherStatus;
+  relationMother.superpowers = [];
+  if (typeof data.motherSuperpower1 === "string") {
+    relationMother.superpowers.push(data.motherSuperpower1);
+  }
+  if (typeof data.motherSuperpower2 === "string") {
+    relationMother.superpowers.push(data.motherSuperpower2);
+  }
+  newObj.relationships.push(relationMother);
+
+  let relationGirlfriend = {};
+  relationGirlfriend.type = "girlfriend";
+  relationGirlfriend.name = data.girlfriendName;
+  relationGirlfriend.age = data.girlfriendAge;
+  relationGirlfriend.status = data.girlfriendStatus;
+  relationGirlfriend.superpowers = [];
+  if (typeof data.girlfriendSuperpower1 === "string") {
+    relationGirlfriend.superpowers.push(data.girlfriendSuperpower1);
+  }
+  if (typeof data.girlfriendSuperpower2 === "string") {
+    relationGirlfriend.superpowers.push(data.girlfriendSuperpower2);
+  }
+  newObj.relationships.push(relationGirlfriend);
+  console.log(newObj);
+  return newObj;
 }
 
 // Use a console.log to verify

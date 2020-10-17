@@ -53,7 +53,25 @@ const favoriteDessertsGroupB = {
 // Your function should work with both objects and any other objects of the same shape.
 
 function sortByPopularity(obj) {
-  // Write code
+  let nonUniquedesserts = Object.values(obj)
+
+  const dessertCounts = {}
+  nonUniquedesserts.forEach(dessert=>{
+    if(!dessertCounts[dessert]){
+      dessertCounts[dessert] = 1
+    } else{
+      dessertCounts[dessert] += 1
+    }
+  })
+
+  const dessertCountsSorted = Object.entries(dessertCounts).sort((entryA, entryB)=>{
+    const currentDessertCount = entryA[1]
+    const nextDessertCount = entryB[1]
+    return nextDessertCount - currentDessertCount // if (+) ascending, if (-) descending
+  });
+
+  console.log(dessertCountsSorted)
+
 }
 
 // Verification via console.log()
