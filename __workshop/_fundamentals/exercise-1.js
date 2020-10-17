@@ -80,9 +80,51 @@ const inputData = {
 // ✅ ['can-blink-lights']
 // ⛔️ ['can-blink-lights', null]
 
-function transformData(data) {
-  // Your code here
-}
+function transformData(obj) {
+  let newObject = {};
+  newObject.name = obj.name;
+  newObject.age = obj.age;
+  newObject.status = obj.status;
+
+  let address = {};
+  address.streetAddress = obj.address1;
+  address.city = obj.addressCity;
+  address.state = obj.addressState;
+  address.country = obj.addressCountry;
+  newObject.address = address;
+
+  let superpowers = [];
+  superpowers.push(obj.superpower1);
+  newObject.superpowers = superpowers;
+
+  let relationships = [
+    {
+      'type': 'mother',
+      'name': `${obj.motherName}`,
+      'age': `${obj.motherAge}`,
+      'status': `${obj.motherStatus}`,
+      'superpowers': [],
+    },
+    {
+      'type': 'best friend',
+      'name': `${obj.bestFriendName}`,
+      'age': `${obj.bestFriendAge}`,
+      'status': `${obj.bestFriendStatus}`,
+      'superpowers': [],
+    },
+    {
+      'type': 'girlfriend',
+      'name': `${obj.girlfriendName}`,
+      'age': `${obj.girlfriendAge}`,
+      'status': `${obj.girlfriendStatus}`,
+      'superpowers': [`${obj.girlfriendSuperpower1}`, `${obj.girlfriendSuperpower2}`],
+    }
+  ];
+  newObject.relationships = relationships;
+  return newObject;
+  }
+
+console.log(transformData(inputData));
 
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy
@@ -92,3 +134,25 @@ console.log(JSON.stringify(transformData(inputData), null, 2));
 // Test your code: "yarn test exercise-1"
 
 module.exports = { inputData, transformData };
+
+
+
+// motherObject.name = obj.motherName;
+// motherObject.age = obj.motherAge;
+// motherObject.status = obj.motherStatus;
+// motherObject.superpowers = [];
+// relationships.motherObject = motherObject;
+// let bestFriendObject = {};
+//   bestFriendObject.type = 'best friend';
+//   bestFriendObject.name = obj.bestFriendName;
+//   bestFriendObject.age = obj.bestFriendAge;
+//   bestFriendObject.status = obj.bestFriendStatus;
+//   bestFriendObject.superpowers = [];
+// relationships.bestFriendObject = bestFriendObject;
+// let girlfriendObject = {};
+//   girlfriendObject.type = 'girlfriend';
+//   girlfriendObject.name = obj.girlfriendName;
+//   girlfriendObject.age = obj.girlfriendAge;
+//   girlfriendObject.status = obj.girlfriendStatus;
+//   girlfriendObject.superpowers = [obj.girlfriendSuperpower1, obj.girlfriendSuperpower2];
+// relationships.girlfriendObject = girlfriendObject;
