@@ -81,13 +81,58 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+  let {name, age, status, superpower1, superpower2, address1, addressCity, addressState, addressCountry,
+    motherName, motherAge, motherStatus, motherSuperpower1, motherSuperpower2,
+    bestFriendName, bestFriendAge, bestFriendStatus, bestFriendSuperpower1, bestFriendSuperpower2,
+    girlfriendName, girlfriendAge, girlfriendStatus, girlfriendSuperpower1, girlfriendSuperpower2 
+  } = inputData
+
+  motherSuperpower1 = [];
+  let innerAddress = new Object();
+    innerAddress["streetAddress"] = address1;
+    innerAddress["city"] = addressCity;
+    innerAddress["state"] = addressState;
+    innerAddress["country"] = addressCountry;
+
+  let mainSuperpowers = new Array(superpower1);
+
+  let innerRelationships1 = new Object();
+    innerRelationships1.type = "mother";
+    innerRelationships1.name = motherName;
+    innerRelationships1.age = motherAge;
+    innerRelationships1.status = motherStatus;
+    innerRelationships1.superpowers = motherSuperpower1;
+
+  let gfSuperpowers = new Array(girlfriendSuperpower1, girlfriendSuperpower2);
+  let innerRelationships2 = new Object();
+    innerRelationships2.type = 'girlfriend';
+    innerRelationships2.name = girlfriendName;
+    innerRelationships2.age = girlfriendAge;
+    innerRelationships2.status = girlfriendStatus;
+    innerRelationships2.superpowers = gfSuperpowers;
+
+  let mainRelationships = new Array(innerRelationships1, innerRelationships2);
+
+
+  let newObj = new Object();
+    newObj.name = name;
+    newObj.age = age;
+    newObj.status = status;
+    newObj.address = innerAddress;
+    newObj.superpowers = mainSuperpowers;
+    newObj.relationships = mainRelationships;
+    
+  return newObj;
 }
+
+//Object.creat();
+
+console.log(transformData(inputData));
 
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy
 // to see what it looks like, and debug any problems.
-console.log(JSON.stringify(transformData(inputData), null, 2));
+//console.log(JSON.stringify(transformData(inputData), null, 2));
 
 // Test your code: "yarn test exercise-1"
 
