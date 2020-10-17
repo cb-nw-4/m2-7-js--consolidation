@@ -81,8 +81,39 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+let newObject = {
+  name: data["name"],
+  age: data["age"],
+  status: data["status"],
+  address: {
+    streetAddress: data["address1"],
+    city: data["addressCity"],
+    state: data["addressState"],
+    country: data["addressCountry"],
+  },
+  superpowers: [data["superpower1"]],
+  relationships: [
+    {
+      type: "mother",
+      name: data["motherName"],
+      age: data["motherAge"],
+      status: data["motherStatus"],
+      superpowers: [],
+    },
+    {
+      type: "girlfriend",
+      name: data["girlfriendName"],
+      age: data["girlfriendAge"],
+      status: data["girlfriendStatus"],
+      superpowers: [data["girlfriendSuperpower1"], data["girlfriendSuperpower2"]],
+    }
+  ]
+  }
+  return newObject;
 }
+
+
+
 
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy

@@ -60,13 +60,32 @@ const favoriteDessertsGroupB = {
 //   'dessert': [ 'minda' ]
 // }
 
+
+
 function groupByValue(obj) {
-  // do something
+  let newObj = {};
+
+  let desserts = Object.values(obj);
+  
+  desserts.forEach(function(dessert) {
+    newObj[dessert] = []
+  });
+
+  let people = Object.keys(obj);
+
+  people.forEach(function(person) {
+    let dessert = obj[person];
+    newObj[dessert].push(person);
+  });
+
+  return newObj;
 }
 
+
+
 // Verification via console.log()
-console.log("Group A", groupByValue(favoriteDessertsGroupA));
-console.log("Group B", groupByValue(favoriteDessertsGroupB));
+// console.log("Group A", groupByValue(favoriteDessertsGroupA));
+// console.log("Group B", groupByValue(favoriteDessertsGroupB));
 
 // Test your code: "yarn test exercise-3"
 
