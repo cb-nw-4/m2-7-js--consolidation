@@ -18,7 +18,7 @@ const favoriteDessertsGroupA = {
   rick: "brownies",
   andrew: "cheese cake",
   jerry: "rhubard pie",
-  "jean-luc": "cheese cake",
+  JeanLuc: "cheese cake",
   tiffany: "waffles",
   melissa: "profiteroles",
 };
@@ -54,6 +54,23 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   // Write code
+let arr = Object.values(obj);
+let frequency = {};
+
+arr.forEach(function(value) {
+  frequency[value] = 0;
+});
+
+let uniqueItem = arr.filter(function(value) {
+  return ++frequency[value] === 1;
+});
+
+let finalOrder = uniqueItem.sort(function (a,b) {
+  return frequency[a]-frequency[b];
+});
+
+return finalOrder.reverse();
+
 }
 
 // Verification via console.log()
