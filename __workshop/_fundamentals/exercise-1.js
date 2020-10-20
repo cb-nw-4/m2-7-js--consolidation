@@ -81,8 +81,65 @@ const inputData = {
 // ⛔️ ['can-blink-lights', null]
 
 function transformData(data) {
-  // Your code here
+    // Your code here
+    let {name, age, status, superpower1, superpower2, address1, addressCity, addressCountry, addressState, motherAge, motherName, motherStatus, motherSuperpower1, motherSuperpower2, girlfriendAge, girlfriendName, girlfriendStatus, girlfriendSuperpower1, girlfriendSuperpower2} = data;
+
+    let willPower = [];
+    function willPowerF(){
+      if (superpower1 !== null) {willPower.push(superpower1);}
+      if (superpower2 !== null) {willPower.push(superpower2);}
+    }
+
+    willPowerF();
+
+    let motherPower = [];
+    function motherPowerF(){
+      if (motherSuperpower1 !== null) {motherPower.push(motherSuperpower1);}
+      if (motherSuperpower2 !== null) {motherPower.push(motherSuperpower2);}
+    }
+    motherPowerF();
+
+    let gfPower = [];
+    function gfPowerF(){
+      if (girlfriendSuperpower1 !== null) {gfPower.push(girlfriendSuperpower1);}
+      if (girlfriendSuperpower2 !== null) {gfPower.push(girlfriendSuperpower2);}
+    }
+    gfPowerF();
+
+    let will = {
+      name: name,
+      age: age,
+      status: status,
+      address: {
+        streetAddress: address1,
+        city: addressCity,
+        state: addressState,
+        country: addressCountry
+      },
+      superpowers: willPower,
+      relationships: [
+        {
+          type: "mother",
+          name: motherName,
+          age: motherAge,
+          status: motherStatus,
+          superpowers: motherPower
+        },
+        {
+          type: "girlfriend",
+          name: girlfriendName,
+          age: girlfriendAge,
+          status: girlfriendStatus,
+          superpowers: gfPower
+        }
+      ]
+
+
+    };
+
+return will;
 }
+
 
 // Use a console.log to verify
 // `JSON.stringify` is used to "pretty-print" the output, so that it's easy
