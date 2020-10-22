@@ -82,6 +82,67 @@ const inputData = {
 
 function transformData(data) {
   // Your code here
+  let {
+    name,
+    age, 
+    status, 
+    superpower1, 
+    superpower2, 
+    address1,
+    addressCity,
+    addressState,
+    addressCountry, 
+    motherName,
+    motherAge,
+    motherStatus,
+    motherSuperpower1,
+    motherSuperpower2,
+    girlfriendName,
+    girlfriendAge,
+    girlfriendStatus,
+    girlfriendSuperpower1,
+    girlfriendSuperpower2,
+}=data;
+
+  let result={
+    name,
+    age,
+    status,
+    address: {
+      streetAddress: address1,
+      city: addressCity,
+      state: addressState,
+      country: addressCountry,
+    },
+    superpowers: [
+      superpower1,
+      superpower2
+  ].filter((superpower)=>(superpower)),
+    relationships: [
+      {
+        type: "mother",
+        "name": motherName,
+        "age": motherAge,
+        "status":motherStatus,
+        superpowers: [
+          motherSuperpower1,
+          motherSuperpower2
+      ].filter((superpower)=>(superpower)),
+      },
+      {
+        type: "girlfriend",
+        "name": girlfriendName,
+        "age": girlfriendAge,
+        "status": girlfriendStatus,
+        superpowers: [
+          girlfriendSuperpower1,
+          girlfriendSuperpower2
+        ].filter((superpower)=>(superpower)),
+      },
+    ],
+  }
+
+  return result;
 }
 
 // Use a console.log to verify

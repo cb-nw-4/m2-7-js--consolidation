@@ -62,6 +62,21 @@ const favoriteDessertsGroupB = {
 
 function groupByValue(obj) {
   // do something
+  let countDesserts = {};
+
+  let desserts = Object.values(obj);
+
+
+  desserts.forEach((dessertName) => {
+      countDesserts[dessertName] = [];
+
+      Object.keys(obj).forEach(key => {
+          if (obj[key] === dessertName) {
+              countDesserts[dessertName].push(key)
+          }
+      })
+  })
+  return countDesserts;
 }
 
 // Verification via console.log()

@@ -20,7 +20,9 @@ body {
   min-width: 320px;
 }
 
-.bacon {
+/*top area: title and years*/
+/* bacon */
+.date-section {
   background: var(--beau-blue);
   position: relative;
   display: flex;
@@ -29,12 +31,12 @@ body {
   height: var(--small-band-height);
   z-index: 1;
 }
-
-.bivrip {
+/* bivrip */
+.container-button {
   margin: 4px;
 }
-
-.bivrip .boom {
+/* bivrip boom */
+.container-button .button-year {
   background: transparent;
   border: 3px solid var(--ksu-purple);
   padding: 14px 32px;
@@ -46,8 +48,8 @@ body {
   text-decoration: none;
   transition: all 0.5s;
 }
-
-.believe {
+/* believe */
+.coverYear {
   color: #fff;
   top: -50px;
   font-family: var(--main-font);
@@ -58,15 +60,17 @@ body {
   width: 100%;
   overflow: hidden;
 }
-
-.boom.active,
-.boom:hover {
+/* boom */
+.button-year.active,
+.button-year:hover {
   background: var(--ksu-purple);
   border-color: transparent;
   color: white;
 }
 
-.what-now {
+/* middle area: numbers */
+/* what-now */
+.yellow-circle {
   min-height: var(--large-band-height);
   display: flex;
   justify-content: center;
@@ -74,8 +78,8 @@ body {
   flex-wrap: wrap;
   padding: 32px;
 }
-
-.that {
+/* that */
+.number {
   color: var(--ksu-purple);
   cursor: pointer;
   display: flex;
@@ -88,9 +92,9 @@ body {
   position: relative;
   width: var(--number-container-size);
 }
-
-.that::before,
-.that::after {
+/*  that:: before & that::after */
+.number::before,
+.number::after {
   content: "";
   background: var(--lemon-yellow);
   border-radius: 50%;
@@ -102,15 +106,17 @@ body {
   bottom: -5px;
   left: -5px;
 }
-
-.that::after {
+/*  that::after */
+.number::after {
   height: calc(var(--number-container-size) - 30px);
   width: calc(var(--number-container-size) - 30px);
   bottom: 14px;
   left: 16px;
 }
 
-.other-stuff {
+/* bottom area: food */
+/* other-stuff */
+.food-names {
   flex: 1;
   background: var(--raspberry);
   overflow: hidden;
@@ -120,16 +126,16 @@ body {
   font-family: var(--main-font);
   font-size: 72px;
 }
-
-.other-stuff .aaaa {
+/*  (other-stuff  aaaa */
+.food-names .triangle {
   color: #fff;
   position: relative;
   font-size: 196px;
   margin: 0 24px 0 100px;
   z-index: 1;
 }
-
-.other-stuff .aaaa::before {
+/* other-stuff .aaaa::before */
+.food-names .triangle::before {
   content: "";
   position: absolute;
   width: 0;
@@ -141,8 +147,8 @@ body {
   left: -50px;
   transform: rotate(20deg);
 }
-
-.other-stuff .bbbb {
+/* other-stuff .bbbb */
+.food-names .foodText {
   color: #fff;
   background: var(--ksu-purple);
   width: 400px;
@@ -154,12 +160,14 @@ body {
   transition: all ease 400ms;
   z-index: 1;
 }
-
-.eeee {
+/* eeee */
+.textHover {
   color: var(--melon);
 }
 
-.dddd {
+/* top area: title*/
+/* dddd */
+.header {
   background: var(--ksu-purple);
   display: flex;
   flex-direction: column;
@@ -167,8 +175,8 @@ body {
   align-items: center;
   height: var(--small-band-height);
 }
-
-.cccc {
+/* cccc */
+.title {
   color: #fff;
   font-size: 60px;
   font-family: var(--main-font);

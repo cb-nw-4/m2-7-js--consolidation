@@ -54,6 +54,23 @@ const favoriteDessertsGroupB = {
 
 function sortByPopularity(obj) {
   // Write code
+  let desserts = Object.values(obj);
+    let dessertsCount = {};
+
+    desserts.forEach((el, i) => {
+        if (dessertsCount[el] === undefined) {
+            dessertsCount[el] = 1;
+        } else {
+            dessertsCount[el] = dessertsCount[el] + 1
+        }
+
+    });
+
+
+    return Object.entries(dessertsCount).reverse().sort((a, b) => {
+        return b[1] - a[1]
+    }).map(el => el[0])
+
 }
 
 // Verification via console.log()
