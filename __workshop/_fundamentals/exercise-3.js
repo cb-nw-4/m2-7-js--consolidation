@@ -62,6 +62,15 @@ const favoriteDessertsGroupB = {
 
 function groupByValue(obj) {
   // do something
+  let grouping = Object.keys(obj).reduce(
+    (returnVal, key) => {
+      let item = obj[key];
+      returnVal[item] = returnVal[item] || [];
+      returnVal[item].push(key);
+      return returnVal;
+    }, {});
+    return grouping;
+  console.log(grouping)
 }
 
 // Verification via console.log()
